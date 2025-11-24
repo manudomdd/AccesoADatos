@@ -1,6 +1,9 @@
 import java.io.*;
 import java.util.Scanner;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+
 public class App {
 
     private static File directorio;
@@ -25,7 +28,8 @@ public class App {
             System.out.println("8. Mostrar persona de persona1.txt");
             System.out.println("9. Modificar la persona añadida"); 
             System.out.println("10. Crear fichero de texto."); 
-            System.out.println("11. Salir\n");
+            System.out.println("11. Intentar leer imagen"); 
+            System.out.println("12. Salir\n");
 
             option = scanner.nextInt();
             scanner.nextLine();
@@ -41,11 +45,12 @@ public class App {
                 case 8 -> leerPersona();
                 case 9 -> modificarPersona();
                 case 10 -> crearFicheroTexto();
-                case 11 -> System.out.println("Saliendo del programa...");
+                case 11 -> leerImagen();
+                case 12 -> System.out.println("Saliendo del programa...");
                 default -> System.out.println("Seleccione una opción válida.");
             }
 
-        } while (option != 11);
+        } while (option != 12);
     }
 
     //1. Crea un directorio llamadio “ejercicios”
@@ -201,6 +206,18 @@ public class App {
         try (FileWriter fw = new FileWriter("textoPrueba.txt")) {
             fw.write(mensaje);
             System.out.println("Fichero de texto creado correctamente.");
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    //al intentar leer un archivo imagen lo que se imprimira por pantalla serán numeros
+    // 0-255 correspondientes a los bytes.
+
+    public static void leerImagen() {
+        try {
+            BufferedImage imagen = ImageIO.read(new File("imagen.jpg"));
+            System.out.println("Ancho: " + imagen.getWidth() + ", Alto: " + imagen.getHeight());
         } catch (Exception ex) {
             ex.printStackTrace();
         }
