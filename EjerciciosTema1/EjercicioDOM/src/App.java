@@ -11,7 +11,6 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
 public class App {
-
     public static void main(String[] args) {
         try {
             File file = new File("libros.xml"); 
