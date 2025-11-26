@@ -1,10 +1,14 @@
 import java.io.File;
+import java.io.IOException;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import org.w3c.dom.DOMException;
 import org.w3c.dom.Document; // <--- ASEGÚRATE QUE ES ESTE IMPORT
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
 
 public class App {
 
@@ -50,9 +54,8 @@ public class App {
                     System.out.println(" - Descripción: " + description.trim());
                 }
             }         
-        } catch (Exception e) {
+        } catch (IOException | ParserConfigurationException | DOMException | SAXException e) {
             System.out.println("Ocurrió un error leyendo el XML:");
-            e.printStackTrace();
         }
     }
 }
