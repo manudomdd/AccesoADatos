@@ -216,11 +216,12 @@ public class App {
     //al intentar leer un archivo imagen lo que se imprimira por pantalla serán numeros
     // 0-255 correspondientes a los bytes.
 
+    @SuppressWarnings("CallToPrintStackTrace")
     public static void leerImagen() {
         try {
             BufferedImage imagen = ImageIO.read(new File("imagen.jpg"));
             System.out.println("Ancho: " + imagen.getWidth() + ", Alto: " + imagen.getHeight());
-        } catch (Exception ex) {
+        } catch (IOException ex) {
             ex.printStackTrace();
         }
     }
