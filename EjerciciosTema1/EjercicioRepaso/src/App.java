@@ -10,7 +10,7 @@ public class App {
     private static File fichero1;
     private static File fichero2;
 
-    private static Scanner scanner = new Scanner(System.in);
+    private static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) throws Exception {
 
@@ -51,6 +51,8 @@ public class App {
             }
 
         } while (option != 12);
+
+        scanner.close();
     }
 
     //1. Crea un directorio llamadio “ejercicios”
