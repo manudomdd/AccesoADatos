@@ -15,7 +15,8 @@ public class App {
 
     public static void mostrarIds() {
         try {
-            File file = new File("books.xml");
+            File file = new File("EjerciciosTema1\\EjercicioRepaso2\\books.xml");
+
 
             DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
             DocumentBuilder db = dbf.newDocumentBuilder();
@@ -41,7 +42,8 @@ public class App {
 
     public static void mostrarAutoresYTitulos() {
     try {
-        File file = new File("books.xml");
+        File file = new File("EjerciciosTema1\\EjercicioRepaso2\\books.xml");
+
 
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
         DocumentBuilder db = dbf.newDocumentBuilder();
