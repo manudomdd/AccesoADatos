@@ -45,4 +45,16 @@ public class PersonaDAO {
 
         return persona;
     }
+    
+    private static void createTable() {
+    	String sql = "CREATE TABLE personas (id INTEGER PRIMARY KEY"
+    			+ "AUTO_INCREMENT";
+    	try (Connection conn = DriverManager.getConnection(URL, USER, PASS);
+                PreparedStatement pstmt = conn.prepareStatement(sql)) {
+    	} catch (SQLException ex) {
+    		
+    	}
+
+    }
+    	
 }
