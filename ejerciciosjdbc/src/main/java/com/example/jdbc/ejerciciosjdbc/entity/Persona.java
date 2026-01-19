@@ -1,52 +1,61 @@
 package com.example.jdbc.ejerciciosjdbc.entity;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Persona {
-	
-	protected int id; 
-	protected String nombre;
-	protected ArrayList<String> direcciones;
-		
-	public Persona() {
-		super();
-		this.direcciones = new ArrayList<>();
-	}
+    
+    protected int id; 
+    protected String nombre;
+    protected int edad; 
+    protected ArrayList<String> direcciones;
+        
+    public Persona() {
+        super();
+        this.direcciones = new ArrayList<>();
+    }
 
-	public Persona(int id, String nombre, ArrayList<String> direcciones) {
-		super();
-		this.id = id;
-		this.nombre = nombre;
-		this.direcciones = direcciones;
-	}
+    public Persona(int id, String nombre, int edad, ArrayList<String> direcciones) {
+        super();
+        this.id = id;
+        this.nombre = nombre;
+        this.edad = edad;
+        this.direcciones = direcciones;
+    }
 
-	public int getId() {
-		return id;
-	}
+    public int getId() {
+        return id;
+    }
 
-	public void setId(int id) {
-		this.id = id;
-	}
+    public void setId(int id) {
+        this.id = id;
+    }
 
-	public String getNombre() {
-		return nombre;
-	}
+    public String getNombre() {
+        return nombre;
+    }
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 
-	public ArrayList<String> getDirecciones() {
-		return direcciones;
-	}
+    public int getEdad() {
+        return edad;
+    }
 
-	public void setDirecciones(ArrayList<String> direcciones) {
-		this.direcciones = direcciones;
-	}
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
 
-	@Override
-	public String toString() {
-		return "Persona [id=" + id + ", nombre=" + nombre + ", direcciones=" + direcciones + "]";
-	} 
+    public ArrayList<String> getDirecciones() {
+        return direcciones;
+    }
+
+    public void setDirecciones(ArrayList<String> direcciones) {
+        this.direcciones = direcciones;
+    }
+
+    @Override
+    public String toString() {
+        return "Persona [id=" + id + ", nombre=" + nombre + ", edad=" + edad + "]";
+    } 
 }
